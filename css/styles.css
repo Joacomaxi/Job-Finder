@@ -1,0 +1,215 @@
+/* Estilos generales */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    top:0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #110930;
+    color: white;
+    position: relative;
+    z-index: 10;
+    height: 45px; /* Ajusta la altura del header según sea necesario */
+    position: sticky;
+}
+
+footer {
+    left: 0;
+    bottom: -100px; /* Oculto por defecto */
+    width: 100%;
+    background-color: #110930;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    transition: bottom 0.3s;
+    z-index: 20;
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #2c0ba1; /* Fondo diferente al pasar el cursor o si está activo */
+    border-radius: 3px;
+}
+
+.profile-icon {
+    cursor: pointer;
+    font-size: 1.5em;
+    width: 40px; /* Ajusta el ancho de la imagen del perfil */
+    height: 44px; /* Ajusta la altura de la imagen del perfil */
+    border-radius: 50%; /* Hace la imagen circular */
+    object-fit: cover; /* Asegura que la imagen se ajuste bien dentro del contenedor */
+}
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    background-color: #f1f1f1;
+}
+
+#search {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#map {
+    height: calc(100% - 120px); /* Ajusta esto según la altura del encabezado */
+    width: 100%;
+    position: relative;
+    z-index: 5; /* Asegúrate de que el mapa esté detrás del menú */
+}
+
+/* Estilos para el menú hamburguesa en pantallas pequeñas */
+@media (max-width: 768px) {
+    nav.hidden {
+        display: none; /* Ocultar el menú en pantallas pequeñas */
+    }
+
+    .burger-menu {
+        display: block; /* Mostrar el icono de hamburguesa */
+        position: relative; /* Ajusta la posición relativa */
+        z-index: 20; /* Superior al del menú y del mapa */
+        font-size: 1.5em; /* Tamaño del icono de hamburguesa */
+        width: 40px; /* Ancho del botón de hamburguesa */
+        height: 40px; /* Altura del botón de hamburguesa */
+        padding: 5px; /* Espacio interno del botón */
+        cursor: pointer; /* Cambia el cursor */
+    }
+
+    .logo {
+        flex: 1;
+        text-align: center; /* Centra el logo */
+    }
+
+    .profile-icon {
+        margin-left: auto; /* Empuja el ícono de perfil a la derecha */
+    }
+
+    nav.visible {
+        display: block; /* Mostrar el menú cuando se hace clic en el menú hamburguesa */
+        position: fixed; /* Hacer que el menú sea fijo para que se superponga correctamente */
+        top: 60px; /* Ajusta el top según la altura del header */
+        left: 0;
+        height: calc(100% - 60px); /* Ajusta la altura del menú para que no cubra el header */
+        width: 35%; /* Ancho del menú hamburguesa */
+        background-color: #110930;
+        overflow: auto;
+        z-index: 15; /* Asegúrate de que el menú esté por encima del mapa pero por debajo del botón */
+        transform: translateX(-100%);
+        transition: transform 0.5s ease;
+    }
+
+    nav.visible.show {
+        transform: translateX(0);
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+}
+
+/* Estilos para el menú de perfil */
+.profile-menu {
+    position: fixed;
+    top: 60px; /* Ajusta según sea necesario */
+    right: 0;
+    height: calc(100% - 60px); /* Ajusta según sea necesario */
+    width: 30%; /* Ancho del menú de perfil */
+    background-color: #110930;
+    overflow: auto;
+    z-index: 15;
+    transform: translateX(100%);
+    transition: transform 0.3s ease;
+    text-align: right; /* Alinear las opciones a la derecha */
+}
+
+.profile-menu.show {
+    transform: translateX(0);
+}
+
+.profile-menu ul {
+    list-style: none;
+    padding: 20px;
+    margin: 0;
+}
+
+.profile-menu ul li {
+    margin: 10px 0;
+}
+
+.profile-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+.profile-menu ul li a:hover {
+    background-color: #2c0ba1;
+    border-radius: 3px;
+}
+
+/* Ocultar el botón de menú en pantallas grandes */
+@media (min-width: 769px) {
+    .burger-menu {
+        display: none; /* Ocultar el icono de hamburguesa en pantallas grandes */
+    }
+
+    .profile-menu {
+        width: 10%; /* Ancho del menú de perfil */
+    }
+
+    nav {
+        display: flex; /* Mostrar el menú en pantallas grandes */
+    }
+
+    nav ul {
+        flex-direction: row;
+        align-items: center;
+    }
+}
+
+/* Clase para el enlace activo */
+nav ul li a.active {
+    background-color: #ffffff;
+    color: #070d07;
+}

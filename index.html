@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Finder</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+<body>
+    <header>
+        <div class="burger-menu" id="burger-menu">☰</div>
+        <div class="logo">Job Finder</div>
+        <nav id="nav-menu" class="hidden">
+            <ul>
+                <li><a href="index.html" class="active">Inicio</a></li>
+                <li><a href="Paginas/Servicios.html">Servicios</a></li>
+                <li><a href="Paginas/Contactos.html">Contactos</a></li>
+                <li><a href="Paginas/Acercade.html">Acerca de</a></li>
+            </ul>
+        </nav>
+        <div class="profile-container">
+            <img src="imagenes/Fotoperfil.png" alt="Perfil" class="profile-icon" id="profile-icon">
+            <div id="profile-menu" class="profile-menu hidden">
+                <ul>
+                    <li><a href="#">Mi Perfil</a></li>
+                    <li><a href="#">Configuración</a></li>
+                    <li><a href="#">Cerrar Sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="search-container">
+        <input type="text" id="search" placeholder="Escribe el tipo de servicio que necesites">
+    </div>
+    <div id="map"></div>
+
+    <footer>
+        <p>Atributo a <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> por su mapa y creadores.</p>
+        <p>Desarrollador web: Maximiliano Sánchez.</p>
+        <p>Diseñadores web: Mateo Cancino, Lucas Ávila.</p>
+        <p>Diseñador de base de datos: Linguini.</p>
+        <p>Derechos de autor &copy; Maximiliano Joaquín Sánchez Deoseffe.</p>
+    </footer>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
